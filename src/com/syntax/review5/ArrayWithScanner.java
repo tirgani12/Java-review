@@ -1,28 +1,24 @@
 package com.syntax.review5;
 
-public class ArrayReview {
+import java.util.Scanner;
+
+public class ArrayWithScanner {
     public static void main(String[] args) {
-        int a=10;
-        int []arr=new int[3];
-        arr[0]=10;
-        arr[1]=20;
-        arr[2]=30;
-        System.out.println("Size of the array="+arr.length);
-        //to get all value from the array
-        for (int i=0;i<arr.length;i++){
-            System.out.println(arr[i]);
+        //let's create an array of names using Scanner
+        Scanner scan=new Scanner(System.in);
+        System.out.println("How many names you want to store");
+        int size=scan.nextInt();
+        String[] name=new String[size];
+        //This loop stores elements inside the array
+        //regular for loop work with indexes
+        for (int i=0;i< name.length;i++){
+            System.out.println("Please enter name");
+            name[i]= scan.next();
         }
-        for (int num:arr){
-            System.out.println(num);
-        }
-        String [] colors={"black","white","red","purple","blue"};
-        //anytime we have arrays we can use enhanced for loop
-        for (String color:colors){
-            System.out.print(color+" ");
-        }
-        System.out.println("-----printing in reverse----");
-        for (int i=colors.length-1;i>=0;i--){
-            System.out.print(colors[i]+" ");
+        //using loop below we can retrieve element
+        //enhanced for loop work with variable
+        for (String n:name){
+            System.out.println(n);
         }
     }
 }
